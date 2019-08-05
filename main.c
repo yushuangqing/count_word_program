@@ -134,10 +134,10 @@ int main(int argc, char *argv[])
 	start = clock();
 	    
 	list *my_list = NULL;
-	for(int i=0; i<argc; ++i)
-	{
-		printf("%s\n", argv[i]);
-	}
+//	for(int i=0; i<argc; ++i)
+//	{
+//		printf("%s\n", argv[i]);
+//	}
 
 	int option;
 	char *p_opt = NULL;
@@ -146,16 +146,18 @@ int main(int argc, char *argv[])
 		switch (option) 
 		{
 			case 'Y':
+				printf("忽略大小写\n");
 				flag_case = 1;
 				break;
 			case 'N':
+				printf("不忽略大小写\n");
 				flag_case = 0;
 				break;
 			case 'h':					//显示帮助信息
-				printf("optarg:%s\n", optarg);
-				printf("optind:%d\n", optind);
-				printf("opterr:%d\n", opterr);
-				printf("optopt:%d\n", optopt);
+	//			printf("optarg:%s\n", optarg);
+	//			printf("optind:%d\n", optind);
+	//			printf("opterr:%d\n", opterr);
+	//			printf("optopt:%d\n", optopt);
 				print_usage(stdout);     
 				break;
 			case 'l':					//按照位置排序
@@ -168,10 +170,10 @@ int main(int argc, char *argv[])
 					flag_sort =1;
 				print_list_begin(my_list, print_data);
 					
-				printf("optarg:%s\n", optarg);
-				printf("optind:%d\n", optind);
-				printf("opterr:%d\n", opterr);
-				printf("optopt:%d\n", optopt);
+		//		printf("optarg:%s\n", optarg);
+		//		printf("optind:%d\n", optind);
+		//		printf("opterr:%d\n", opterr);
+		//		printf("optopt:%d\n", optopt);
 				break;
 			case 'd':					//按照字典排序
 				if(flag_sort == 1)
@@ -184,10 +186,10 @@ int main(int argc, char *argv[])
 				printf("按照字典序\n");
 				Sort_List(my_list, sort_list_name);
 
-				printf("optarg:%s\n", optarg);
-				printf("optind:%d\n", optind);
-				printf("opterr:%d\n", opterr);
-				printf("optopt:%d\n", optopt);
+		//		printf("optarg:%s\n", optarg);
+		//		printf("optind:%d\n", optind);
+		//		printf("opterr:%d\n", opterr);
+		//		printf("optopt:%d\n", optopt);
 				break;
 			case 'n':					//按照次数排序
 				if(flag_sort == 1)
@@ -200,26 +202,26 @@ int main(int argc, char *argv[])
 				printf("按照次数\n");
 				Sort_List(my_list, sort_list_num);
 
-				printf("optarg:%s\n", optarg);
-				printf("optind:%d\n", optind);
-				printf("opterr:%d\n", opterr);
-				printf("optopt:%d\n", optopt);
+		//		printf("optarg:%s\n", optarg);
+		//		printf("optind:%d\n", optind);
+		//		printf("opterr:%d\n", opterr);
+		//		printf("optopt:%d\n", optopt);
 				break;
 			case 'p':					//正序输出
 				printf("正序输出\n");	
 				print_list_begin(my_list, print_data);
-				printf("optarg:%s\n", optarg);
-				printf("optind:%d\n", optind);
-				printf("opterr:%d\n", opterr);
-				printf("optopt:%d\n", optopt);
+		//		printf("optarg:%s\n", optarg);
+		//		printf("optind:%d\n", optind);
+		//		printf("opterr:%d\n", opterr);
+		//		printf("optopt:%d\n", optopt);
 				break;
 			case 'r':					//反序输出
 				printf("反序输出\n");
 				print_list_end(my_list, print_data);
-				printf("optarg:%s\n", optarg);
-				printf("optind:%d\n", optind);
-				printf("opterr:%d\n", opterr);
-				printf("optopt:%d\n", optopt);
+		//		printf("optarg:%s\n", optarg);
+		//		printf("optind:%d\n", optind);
+		//		printf("opterr:%d\n", opterr);
+		//		printf("optopt:%d\n", optopt);
 				break;
 			case 'f':
 		/*		p_opt=optarg;
@@ -234,10 +236,10 @@ int main(int argc, char *argv[])
 					printf("p_opt:%s\n", p_opt);
 				}*/
 				my_list=creat_word_list(optarg, add_num,cmp_word, insert_word_node, print_data, flag_case);
-				printf("optarg:%s\n", optarg);
-				printf("optind:%d\n", optind);
-				printf("opterr:%d\n", opterr);
-				printf("optopt:%d\n", optopt);
+		//		printf("optarg:%s\n", optarg);
+		//		printf("optind:%d\n", optind);
+		//		printf("opterr:%d\n", opterr);
+		//		printf("optopt:%d\n", optopt);
 				break;
 			case 'w':					//写入文件
 				freopen(optarg, "w", stdout);//标准输出被重定向到文件
@@ -245,10 +247,10 @@ int main(int argc, char *argv[])
 		  		freopen("/dev/tty","w",stdout);//恢复到标准输出
 
 				printf("共统计 %d  个单词\n", my_list->size);
-				printf("optarg:%s\n", optarg);
-				printf("optind:%d\n", optind);
-				printf("opterr:%d\n", opterr);
-				printf("optopt:%d\n", optopt);
+		//		printf("optarg:%s\n", optarg);
+		//		printf("optind:%d\n", optind);
+		//		printf("opterr:%d\n", opterr);
+		//		printf("optopt:%d\n", optopt);
 				break;
 			case '?':
 				printf("optopt=%c, optarg=%s\n", optopt, optarg);
@@ -261,7 +263,7 @@ int main(int argc, char *argv[])
 		}
 	}	
 	
-	//for(int i=0; i<argc; ++i)
+//	for(int i=0; i<argc; ++i)
 //	{
 //		printf("%s\n", argv[i]);
 //	}
