@@ -240,8 +240,11 @@ int main(int argc, char *argv[])
 				printf("optopt:%d\n", optopt);
 				break;
 			case 'w':					//写入文件
+				freopen(optarg, "w", stdout);//标准输出被重定向到文件
+				print_list_begin(my_list, print_data);
+		  		freopen("/dev/tty","w",stdout);//恢复到标准输出
+
 				printf("共统计 %d  个单词\n", my_list->size);
-				freopen("/dev/tty","w",stdout);//写入到终端输入的文件名
 				printf("optarg:%s\n", optarg);
 				printf("optind:%d\n", optind);
 				printf("opterr:%d\n", opterr);
