@@ -1,3 +1,4 @@
 this is a test!
 switched to branch master
 this is a new test!
+switched to branch my_branch!
